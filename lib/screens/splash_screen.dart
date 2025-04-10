@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_chatbot/screens/chatScreen.dart';
+import 'package:flutter_chatbot/screens/chat_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ChatSplashScreeen extends StatefulWidget {
@@ -15,20 +15,22 @@ class _ChatSplashScreeenState extends State<ChatSplashScreeen> with SingleTicker
   late Animation<double> animation;
 
   @override
-  void initState() {
+  void initState() async{
 
-    _controller = AnimationController(vsync: this,duration: Duration(seconds: 2))..forward();
+    _controller = AnimationController(vsync: this,duration: const Duration(seconds: 2))..forward();
     animation = Tween<double>(begin: 0.8,end: 1.0).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
-
-
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const ChatScreen()),
-      );
-    });
+    _navigateToChatScreen();
     super.initState();
   }
 
+
+  void _navigateToChatScreen() async {
+    await Future.delayed(const Duration(seconds: 3));
+    if (!mounted) return;
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (_) => const ChatScreen()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

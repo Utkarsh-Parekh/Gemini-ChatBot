@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_chatbot/bloc/chatbot_event.dart';
 import 'package:flutter_chatbot/bloc/chatbot_state.dart';
-import 'package:flutter_chatbot/model/chatbotModel.dart';
+import 'package:flutter_chatbot/model/chatbot_model.dart';
 
-import '../repository/chatRepository.dart';
+import '../repository/chat_repository.dart';
 
 class ChatbotBloc extends Bloc<ChatBotEvents, ChatBotState> {
   final ChatRepository chatRepository;
@@ -16,21 +16,18 @@ class ChatbotBloc extends Bloc<ChatBotEvents, ChatBotState> {
 
   FutureOr<void> _chatBotResonseEvent(
       ChatBotReponseEvent event, Emitter<ChatBotState> emit) async {
-    final UserMessage = ChatBotModel(text: event.Prompt!, isUser: true);
+    final userMessage = ChatBotModel(text: event.prompt!, isUser: true);
 
-    print("UserMessage is ${UserMessage}");
     emit(
       state.copyWith(
           isLoading: true,
-          messages: [...state.messages, UserMessage],
+          messages: [...state.messages, userMessage],
           error: ''),
     );
 
     try {
-      final botReponse = await chatRepository.getBotResponse(event.Prompt!);
+      final botReponse = await chatRepository.getBotResponse(event.prompt!);
       final output = ChatBotModel(text: botReponse, isUser: false);
-
-      print("BotReponse is ${botReponse}");
 
       emit(
         state.copyWith(

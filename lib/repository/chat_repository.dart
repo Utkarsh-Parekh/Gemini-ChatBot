@@ -5,17 +5,17 @@ import 'package:http/http.dart' as http;
 
 class ChatRepository{
 
-  String get api_key => dotenv.env['GEMINI_API_KEY'] ?? " ";
-  String get BASE_URL => "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$api_key";
+  String get apikey => dotenv.env['GEMINI_API_KEY'] ?? " ";
+  String get baseurl => "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$apikey";
 
-  Future<String> getBotResponse(String Prompts) async{
-    final response = await http.post(Uri.parse(BASE_URL),
+  Future<String> getBotResponse(String prompts) async{
+    final response = await http.post(Uri.parse(baseurl),
     headers: {
       'Content-Type': 'application/json'
     },
       body: jsonEncode({
         "contents": [{
-          "parts":[{"text": Prompts}]
+          "parts":[{"text": prompts}]
         }]
       })
 

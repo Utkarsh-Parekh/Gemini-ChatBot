@@ -1,4 +1,4 @@
-import 'package:flutter_chatbot/model/chatbotModel.dart';
+import 'package:flutter_chatbot/model/chatbot_model.dart';
 
 class ChatBotState {
   final List<ChatBotModel> messages;

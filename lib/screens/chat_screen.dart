@@ -24,10 +24,10 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-  void ScrollDown() {
+  void scrollDown() {
     WidgetsBinding.instance.addPostFrameCallback((_) =>
         scrollController.animateTo(scrollController.position.maxScrollExtent,
-            duration: Duration(seconds: 2), curve: Curves.easeIn));
+            duration: const Duration(seconds: 2), curve: Curves.easeIn));
   }
 
   @override
@@ -49,7 +49,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                   );
                 }
-                ScrollDown();
+                scrollDown();
               },
               builder: (context, state) {
                 return ListView.builder(

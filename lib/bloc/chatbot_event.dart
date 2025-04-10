@@ -4,11 +4,11 @@ abstract class ChatBotEvents extends Equatable{}
 
 
 class ChatBotReponseEvent extends ChatBotEvents{
-  final String? Prompt;
+  final String? prompt;
 
-  ChatBotReponseEvent(this.Prompt);
+  ChatBotReponseEvent(this.prompt);
 
   @override
-  List<Object?> get props => [Prompt];
+  List<Object?> get props => [prompt];
 
 }
