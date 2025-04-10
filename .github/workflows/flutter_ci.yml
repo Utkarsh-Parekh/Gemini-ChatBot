@@ -17,6 +17,9 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
 
+      - name: Clean up Flutter
+        run: flutter clean
+
       - name: Install dependencies
         run: flutter pub get
 
@@ -26,6 +29,5 @@ jobs:
       - name: Run analyzer
         run: flutter analyze
 
-      # Optional: build APK (if needed)
       - name: Build APK
         run: flutter build apk --release
