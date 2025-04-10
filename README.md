@@ -1,16 +1,31 @@
-# flutter_chatbot
+# 🤖 Gemini Chatbot
 
-A new Flutter project.
+Gemini Chatbot is a fully responsive cross-platform Flutter application built using **BLoC state management**, featuring an animated splash screen, secure API handling, and a custom launcher icon. It interacts with the Gemini API to generate dynamic conversational responses.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🔧 Features
 
-A few resources to get you started if this is your first Flutter project:
+- ⚙️ **BLoC Pattern** for scalable, testable architecture.
+- 📱 **Responsive UI** optimized for phones, tablets, and large screens.
+- 💬 Real-time chatbot interface with user/bot messages.
+- 🚀 **Animated Splash Screen** for a polished entry experience.
+- 🛡️ **Secure API Key Handling** – keys are excluded from source control.
+- 🎯 Custom **App Launcher Icon** for branding.
+- 🏗️ **CI/CD Pipeline** for automated release builds via GitHub Actions.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+📱 Screenshots
+
+## Mobile
+| Splash Screen | Chat Screen |
+|---------------|-------------|
+| ![Splash](lib/assets/chatbot_splash_mobile.jpeg) | ![Chat](lib/assets/chatbot_chat_mobile.jpeg) |
+
+
+## Web
+| Splash Screen | Chat Screen |
+|---------------|-------------|
+| ![Splash](lib/assets/chatbot_splash_web.png) | ![Chat](lib/assets/chatbot_chat_web.png) |
+
